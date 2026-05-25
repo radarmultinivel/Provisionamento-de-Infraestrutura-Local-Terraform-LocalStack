@@ -1,0 +1,55 @@
+# Desenvolvido por L. A. Leandro - Sao Jose dos Campos, SP - 25/05/2026
+
+# ──────────────────────────────────────────────
+# Terraform – Estado e metadados de infraestrutura
+# ──────────────────────────────────────────────
+*.tfstate
+*.tfstate.*
+.terraform/
+terraform.tfstate.backup
+crash.log
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# ──────────────────────────────────────────────
+# Credenciais e segredos locais
+# ──────────────────────────────────────────────
+*.tfvars
+!terraform.tfvars
+terraform.rc
+.terraformrc
+
+# ──────────────────────────────────────────────
+# Ambiente local e IDEs
+# ──────────────────────────────────────────────
+.env
+*.local
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# ──────────────────────────────────────────────
+# Docker volumes locais (runtime)
+# ──────────────────────────────────────────────
+.data/
+volume/
+
+# ──────────────────────────────────────────────
+# Python – testes e dependências
+# ──────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+*.egg
+
+# ──────────────────────────────────────────────
+# Sistema operacional
+# ──────────────────────────────────────────────
+.DS_Store
+Thumbs.db

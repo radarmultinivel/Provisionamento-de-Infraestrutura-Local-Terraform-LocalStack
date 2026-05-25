@@ -1,0 +1,26 @@
+# Desenvolvido por L. A. Leandro - Sao Jose dos Campos, SP - 25/05/2026
+version: "3.8"
+
+services:
+  localstack:
+    image: localstack/localstack:latest
+    container_name: localstack-iaco
+    hostname: localstack
+    ports:
+      - "4566:4566"
+      - "4510-4559:4510-4559"
+    environment:
+      - SERVICES=s3,sqs,dynamodb
+      - AWS_DEFAULT_REGION=us-east-1
+      - AWS_ACCESS_KEY_ID=mock_access_key
+      - AWS_SECRET_ACCESS_KEY=mock_secret_key
+      - PERSISTENCE=1
+      - DATA_DIR=/var/lib/localstack/data
+      - DEBUG=0
+    volumes:
+      - localstack-data:/var/lib/localstack/data
+      - "/var/run/docker.sock:/var/run/docker.sock"
+
+volumes:
+  localstack-data:
+    driver: local
